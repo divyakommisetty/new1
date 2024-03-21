@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Check if the httpd service is running
+serviceStatus=$(systemctl is-active httpd)
+
+if [ "$serviceStatus" = "active" ]; then
+    echo "The httpd service is running."
+else
+    echo "The httpd service is not running."
+    # Optionally, try to start the service
+    # systemctl start httpd
+    # echo "Attempting to start httpd service..."
+fi
